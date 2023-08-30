@@ -1,0 +1,343 @@
+:root {
+    --header-height: 80px;  /* ou qualquer valor que você decida para a altura do header */
+}
+@font-face {
+    font-family: '1942';
+    src: url('../assets/fonts/1942.ttf') ;
+}
+body {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Old versions of Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+body, html {
+	
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-color: #1a1a1a ; /* Fundo escuro */
+    color: #e6e6e6; /* Texto claro */
+}
+button:focus, a:focus, input:focus {
+    outline: none;
+}
+
+header, footer {
+    position: fixed;
+    width: 100%;
+    background-color: #111; /* Fundo mais escuro para header e footer */
+    color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra clara */
+}
+
+header {
+    top: 0;
+	height: var(--header-height);
+}
+
+footer {
+    bottom: 0;
+}
+.player-info{
+	text-align: center;
+	
+	
+}
+.player-info span {
+    margin-right: 20px;
+	font-family: '1942';
+	font-size: 1.5em;
+}
+
+main {
+	
+	padding-top: calc(var(--header-height) + 10px); /* 10px é um espaço adicional opcional */
+    overflow: hidden;
+	 background-color: #1a1a1a ; /* Fundo escuro */
+}
+
+.menu {
+    display: flex;
+    overflow-x: auto;
+}
+
+.menu button {
+	max-width: 100px;
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #333; /* Fundo intermediário para botões */
+    color: #fff;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transição suave para hover */
+}
+
+.menu button:last-child {
+    margin-right: 0;
+}
+
+.menu button:focus {
+    outline: none;
+}
+
+.game-section {
+    display: none;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra clara */
+}
+
+/* mini game skill cheack */
+
+.banner-scp-class-d-test {
+    width: 95%;
+    max-width: 600px;
+    padding-bottom: 30.76%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    position: relative;
+    text-align: right; /* Alinha o texto à direita */
+    font-family: '1942'; /* Aplica a fonte personalizada */
+    padding: 10px; /* Adiciona um pouco de espaço interno para que o texto não fique muito próximo das bordas */
+}
+
+.banner-scp-class-d-test span {
+    display: block; /* Cada span em uma linha separada */
+    font-size: 1.2em;
+    margin-bottom: 5px; /* Espaço entre os spans */
+}
+
+ .scp-name-banner{
+	font-size: 2em;
+	
+}
+
+
+
+
+  #startStopBtn {
+            background-color: #444;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+			width: 100%;
+			height: 150px;
+			text-align: center;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+			color: white;    
+  
+        }
+		#classe-d-test{
+			text-align: center;
+		}
+
+        #startStopBtn:hover {
+            background-color: #555;
+        }
+
+        .bar {
+            width: 100%;
+            max-width: 400px;
+            height: 20px;
+            background-color: #555;
+            border-radius: 10px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .Encher {
+            height: 100%;
+            background-color: #00BCD4;
+            width: 0;
+        }
+
+        .target, .minTarget {
+            height: 100%;
+            width: 2px;
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            display: none; /* Inicialmente ocultos */
+        }
+
+        #score {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+		
+/* fim mini game skill check */ 
+
+
+
+/* botoes scp lista para mini game skill check */
+
+.scpChoice {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 15px;
+    font-size: 24px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.scpChoice:hover {
+    background-color: #555;
+}
+
+.scpChoice.locked,
+.scpChoice.glitch-button {
+    background-color: #444;
+    color: #888;
+}
+
+.scpChoice.locked::after {
+    content: " Lvl 10 requerido";
+    font-size: 14px;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+
+.glitch {
+    position: relative;
+    color: #888;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #b0b0b0; /* Cinza claro */
+    animation: glitch-left 1s infinite linear alternate-reverse;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 #707070, 2px 2px #505050; /* Tons de cinza médio e escuro */
+    animation: glitch-right 1s infinite linear alternate-reverse;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-left {
+    0% {
+        transform: translate(0);
+    }
+    33% {
+        transform: translate(-3px, 1px);
+    }
+    66% {
+        transform: translate(2px, -1px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch-right {
+    0% {
+        transform: translate(0);
+    }
+    33% {
+        transform: translate(3px, -1px);
+    }
+    66% {
+        transform: translate(-2px, 2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch-skew {
+    0% {
+        transform: skew(0);
+    }
+    33% {
+        transform: skew(-3deg);
+    }
+    66% {
+        transform: skew(3deg);
+    }
+    100% {
+        transform: skew(0);
+    }
+}
+
+
+
+
+
+/*  fim botoes scp lista para mini game skill check */
+
+
+.progress-container {
+  width: 70%;
+  height: 30px;
+  background-color: #2e2e2e; /* Cor de fundo da barra de progresso mais escura */
+  margin: 10px auto;
+  border: 1px solid #444; /* Cor da borda mais escura */
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.progress-bar {
+  width: 50%;
+  height: 100%;
+  background-color: #555; /* Cor de preenchimento da barra de progresso mais escura */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .progress-container {
+    width: 70%;
+    height: 20px;
+  }
+}
+
+.classDMeta {
+    width: 100%;
+    height: 20px;
+    background-color: #333; /* Cor de fundo da barra */
+    border: 2px solid gray; /* Borda cinza */
+    position: relative;
+    margin-top: 20px; /* Espaçamento entre a barra de skill check e a nova barra */
+}
+
+.classDMeta-enchido {
+    height: 100%;
+    background-color: #ff8c00; /* Cor laranja para o preenchimento */
+    width: 0%; /* Inicialmente, a barra estará vazia */
+    transition: width 0.5s ease-out;
+}

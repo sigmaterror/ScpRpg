@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP RPG Game</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+ <audio id="click_button" src="sounds/click_button.mp3" preload="auto"></audio>
+
+    <!-- Header -->
+    <header>
+        
+        <div class="player-info">
+             <span>Lvl: <span id="player-level"></span></span>
+            <span>XP: <span id="player-xp"></span></span>
+	<div class="progress-container">
+    <div class="progress-bar"></div>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="game-section" id="main-to-inicio">
+            <p>Informações e atributos do jogador.</p>
+			<p><p>Nome: <span id="player-name"></p>
+			<p>Nivel: <span id="player-level"></p>
+			<p>Exp: <span id="player-xp"></p>
+			<p>Sanidade: <span id="player-sanidade"></p>
+			<p>Cartão de Acesso: <span id="player-cartaodeacesso"></p>
+			<p>Anomalias Contidas: <span id="player-anomaliascontidas"></p>			
+        </div>
+
+
+        <div class="game-section" id="main-to-scp-select" style="display: none;">
+            <button class="scpChoice unlocked classDAcess" data-scp-id="scp-173">SCP-173</button>
+            <button class="scpChoice unlocked" data-scp-id="scp-096">SCP-096</button>
+            <button class="scpChoice locked" data-scp-id="scp-035">SCP-035</button>
+            <button class="scpChoice locked" data-scp-id="scp-045">SCP-045</button>
+
+            <button class="scpChoice glitch-button">
+                <span class="glitch" data-text="SCP-???">SCP-???</span>
+            </button>
+        </div>
+
+
+
+        <div class="game-section" id="main-to-classe-d-test" style="display: none;">	  
+        	<div class="banner-scp-class-d-test">
+        		<span class="scp-name-banner" id="scp-name"></span>
+                
+        		<p>euclideu</p>
+        		<span id="scp-difficulty"></span>
+        	</div>
+            
+            <div class="classDMeta">
+                <div class="classDMeta-enchido" id="metaEnchendo"></div>
+            </div>
+            
+            <div class="bar">
+                <div class="Encher"></div>
+                <div class="minTarget" id="minTargetMarker"></div>
+                <div class="target" id="targetMarker"></div>
+            </div>
+           
+                	
+            <button id="startStopBtn" onclick="toggleEncher()">Iniciar</button> 
+           
+                     
+                    	
+        </div>		
+
+        <div class="game-section" id="main-to-admin" style="display: none;">
+            admin
+
+        </div>
+        <div class="game-section" id="main-to-class-d-test-gameover" style="display: none;">
+        Game Over!
+        <button onclick="location.reload();">Recarregar Página</button>
+        </div>
+
+        <div class="game-section" id="main-to-class-d-test-vitoria" style="display: none;">
+        <p>Vítoria </p>
+         <button onclick="location.reload();">Recarregar Página</button> 
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="menu">
+            <button data-section="main-to-inicio">Inicio</button>
+            <button data-section="main-to-scp-select">Classe-D Test</button>
+            <button data-section="main-to-admin">Admin</button>
+        </div>
+    </footer>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="js/db-script.js"></script>
+<script src="js/scripts.js"></script>
+<script src="js/classD.js"></script>
+<script></script>
+</body>
+</html>
